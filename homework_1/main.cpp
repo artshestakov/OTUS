@@ -1,5 +1,5 @@
 #include <iostream>
-#include "build\version.h"
+#include "version.h"
 
 int main(int, char **)
 {
