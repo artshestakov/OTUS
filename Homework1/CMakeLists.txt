@@ -8,3 +8,8 @@ project(helloworld VERSION ${PROJECT_VESRION})
 configure_file(version.h.in version.h)
 
 add_executable(main main.cpp)
+
+set_target_properties(helloworld_cli helloworld PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED ON
+)
