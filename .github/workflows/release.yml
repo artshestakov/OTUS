@@ -19,7 +19,7 @@ jobs:
 #      run: cmake -DCMAKE_BUILD_TYPE=Release -DWITH_BOOST_TEST=ON
     
     - name: Compile
-      run: cd homework_1 && mkdir build && cd build && cmake ..\CMakeLists.txt && cmake --build . --config Release
+      run: cd homework_1 && mkdir build && cd build && cmake ../CMakeLists.txt && cmake --build . --config Release
 
 #    - name: Build
 #      run: cmake --build .
