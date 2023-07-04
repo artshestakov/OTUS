@@ -1,9 +1,9 @@
-#include <iostream>
-#include <version.h>
+#include "lib.h"
 
-int main(int, char**)
-{
-	std::cout << "build " << PROJECT_VERSION_PATCH << std::endl;
-    std::cout << "Hello, world!" << std::endl;
-    return 0;
+#include <iostream>
+
+int main(int, char **) {
+	std::cout << "Version: " << version() << std::endl;
+	std::cout << "Hello, world!" << std::endl;
+	return 0;
 }
