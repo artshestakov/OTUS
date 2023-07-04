@@ -12,6 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: Update packages
+      run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
+    
     - name: Compile
       run: cmake -DCMAKE_BUILD_TYPE=Release
     
