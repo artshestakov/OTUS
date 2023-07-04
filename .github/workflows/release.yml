@@ -9,9 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
     
     - name: Compile
       run: cmake -DCMAKE_BUILD_TYPE=Release
+    
+    - name: Build
       run: cmake --build .
