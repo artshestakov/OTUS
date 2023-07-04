@@ -22,15 +22,15 @@ jobs:
             - name: Configure CMake
                 run: cmake -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-            - name: Build
-                run: cmake --build .
-
-            - name: Create release
-                uses: actions/create-release@v1
-                if: ${{ steps.changelog.outputs.skipped == 'false' }}
-                env:
-                GITHUB_TOKEN: ${{ secrets.github_token }}
-                with:
-                tag_name: ${{ steps.changelog.outputs.tag }}
-                release_name: ${{ steps.changelog.outputs.tag }}
-                body: ${{ steps.changelog.outputs.clean_changelog }}
+#            - name: Build
+#                run: cmake --build .
+#
+#            - name: Create release
+#                uses: actions/create-release@v1
+#                if: ${{ steps.changelog.outputs.skipped == 'false' }}
+#                env:
+#                GITHUB_TOKEN: ${{ secrets.github_token }}
+#                with:
+#                tag_name: ${{ steps.changelog.outputs.tag }}
+#                release_name: ${{ steps.changelog.outputs.tag }}
+#                body: ${{ steps.changelog.outputs.clean_changelog }}
