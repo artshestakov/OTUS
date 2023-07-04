@@ -16,7 +16,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
     
     - name: Compile
-      run: cd homework_1 && mkdir build && cd build && cmake ../CMakeLists.txt -DPROJECT_VERSION=${{github.run_number}} && cmake --build . --config Release
+      run: cd homework_1 && mkdir build && cd build && cmake ../CMakeLists.txt -DVER_REVISION=${{github.run_number}} && cmake --build . --config Release && cmake --build . --target package
 
     - name: Create Release
       id: create_release
