@@ -1,0 +1,13 @@
+/CMakeFiles
+/Debug
+/x64
+/helloworld.dir
+/helloworld_cli.dir
+
+*.vcxproj
+*.vcxproj.filters
+*.sln
+
+CMakeCache.txt
+cmake_install.cmake
+version.h
