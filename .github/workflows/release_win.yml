@@ -1,0 +1,16 @@
+name: Release-Windows
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Prepare to compile
+      run: cmake -S homework_1 -B build -DVER_REVISION=${{github.run_number}} -DIS_WINDOWS=ON
