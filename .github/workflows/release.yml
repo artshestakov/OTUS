@@ -18,7 +18,7 @@ jobs:
 #    - name: Compile
 #      run: mkdir homework_1\build && cd homework_1\build && cmake ../CMakeLists.txt -DVER_REVISION=${{github.run_number}} && cmake --build . --config Release && cmake --build . --target package --config Release
 
-    -name: Compile
+    - name: Compile
       run: cmake -S homework_1 -B build
 
     - name: Create Release
