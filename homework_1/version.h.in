@@ -1,3 +1,5 @@
 #pragma once
 
 #define VERSION_REVISION ${VER_REVISION}
+#define COMPILE_TS_TIME "${TS_TIME}"
+#define COMPILE_TS_DATE "${TS_DATE}"
