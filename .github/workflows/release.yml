@@ -19,7 +19,7 @@ jobs:
 #      run: mkdir homework_1\build && cd homework_1\build && cmake ../CMakeLists.txt -DVER_REVISION=${{github.run_number}} && cmake --build . --config Release && cmake --build . --target package --config Release
 
     - name: Prepare to compile
-      run: cmake -S homework_1 -B build
+      run: cmake -S homework_1 -B build -DVER_REVISION=${{github.run_number}}
       
     - name: Compile
       run: cmake --build build --config Release
@@ -45,6 +45,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: /home/runner/work/OTUS/OTUS/build/homework-${{ github.run_number }}-Linux.deb
+        asset_path: /build/homework-${{ github.run_number }}-Linux.deb
         asset_name: homework-${{ github.run_number }}-Linux.deb
         asset_content_type: application/vnd.debian.binary-package
