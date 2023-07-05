@@ -1,4 +1,4 @@
-name: Release
+name: Release-Ubuntu
 
 on:
   push:
@@ -42,5 +42,3 @@ jobs:
         asset_path: ./build/homework-${{github.run_number}}-Linux.deb
         asset_name: homework-${{github.run_number}}-Linux.deb
         asset_content_type: application/vnd.debian.binary-package
-
-    
