@@ -38,3 +38,4 @@ jobs:
         upload_url: ${{steps.create_release.outputs.upload_url}}
         asset_path: .\build\Release\homework.exe
         asset_name: homework.exe
+        asset_content_type: application/exe
