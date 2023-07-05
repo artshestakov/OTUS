@@ -24,6 +24,9 @@ jobs:
     - name: Compile
       run: cmake --build build --config Release
 
+    - name: Build package
+      run: cmake --build build --target package --config Release
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
