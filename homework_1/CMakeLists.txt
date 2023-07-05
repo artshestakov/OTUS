@@ -5,7 +5,7 @@ set(VER_REVISION 1 CACHE INTERNAL "Patch version")
 string(TIMESTAMP TS_TIME "%H:%M:%S")
 string(TIMESTAMP TS_DATE "%d.%m.%Y")
 
-project(homework)
+project(homework VERSION ${VER_REVISION})
 
 # Автогенерация файлов
 configure_file(version.h.in version.h)
