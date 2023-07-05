@@ -1,0 +1,44 @@
+name: Release-Windows
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Prepare to compile
+      run: cmake -S homework_1 -B build -DVER_REVISION=${{github.run_number}}
+
+    - name: Compile
+      run: cmake --build build --config Release
+
+    - name: Build package
+      run: cmake --build build --target package --config Release
+
+#    - name: Create Release
+#      id: create_release
+#      uses: actions/create-release@v1
+#      env:
+#        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#      with:
+#        tag_name: ${{github.run_number}}
+#        release_name: Release ${{github.run_number}}
+#        draft: false
+#        prerelease: false
+    
+#    - name: Upload Release Asset
+#      id: upload-release-asset
+#      uses: actions/upload-release-asset@v1
+#      env:
+#        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#      with:
+#        upload_url: ${{steps.create_release.outputs.upload_url}}
+#        asset_path: ./build/homework-${{github.run_number}}-Linux.deb
+#        asset_name: homework-${{github.run_number}}-Linux.deb
+#        asset_content_type: application/vnd.debian.binary-package
