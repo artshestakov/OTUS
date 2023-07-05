@@ -7,6 +7,7 @@ string(TIMESTAMP TS_TIME "%H:%M:%S")
 string(TIMESTAMP TS_DATE "%d.%m.%Y")
 
 option(IS_UBUNTU "Build for Ubuntu" OFF)
+option(IS_WINDOWS "Build for Windows" OFF)
 
 project(homework VERSION ${VER_REVISION})
 
