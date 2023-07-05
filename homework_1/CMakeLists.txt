@@ -6,6 +6,8 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DIS_DEBUG")
 string(TIMESTAMP TS_TIME "%H:%M:%S")
 string(TIMESTAMP TS_DATE "%d.%m.%Y")
 
+option(IS_UBUNTU "Build for Ubuntu" OFF)
+
 project(homework VERSION ${VER_REVISION})
 
 # Автогенерация файлов
@@ -18,11 +20,13 @@ target_include_directories(homework
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
 
-install(TARGETS homework RUNTIME DESTINATION bin)
+if(IS_UBUNTU)
+    install(TARGETS homework RUNTIME DESTINATION bin)
 
-set(CPACK_GENERATOR DEB)
-set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
-set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
-set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
-set(CPACK_PACKAGE_CONTACT art.shestakov@icloud.com)
-include(CPack)
+    set(CPACK_GENERATOR DEB)
+    set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+    set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+    set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+    set(CPACK_PACKAGE_CONTACT art.shestakov@icloud.com)
+    include(CPack)
+endif()
