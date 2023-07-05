@@ -14,3 +14,6 @@ jobs:
 
     - name: Prepare to compile
       run: cmake -S homework_1 -B build -DVER_REVISION=${{github.run_number}} -DIS_WINDOWS=ON
+
+    - name: Compile
+      run: cmake --build build --config Release
