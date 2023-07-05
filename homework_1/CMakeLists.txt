@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 # Переменные, которые можем переопределять при запуске cmake
 set(VER_REVISION 1 CACHE INTERNAL "Patch version")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DIS_DEBUG")
 string(TIMESTAMP TS_TIME "%H:%M:%S")
 string(TIMESTAMP TS_DATE "%d.%m.%Y")
 
