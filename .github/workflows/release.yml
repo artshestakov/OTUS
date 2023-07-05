@@ -14,7 +14,7 @@ jobs:
 
     - name: Prepare to compile
       run: cmake -S homework_1 -B build -DVER_REVISION=${{github.run_number}}
-      
+
     - name: Compile
       run: cmake --build build --config Release
 
@@ -31,7 +31,7 @@ jobs:
         release_name: Release ${{github.run_number}}
         draft: false
         prerelease: false
-    
+
     - name: Upload Release Asset
       id: upload-release-asset
       uses: actions/upload-release-asset@v1
