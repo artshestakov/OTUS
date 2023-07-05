@@ -15,8 +15,11 @@ jobs:
     - name: Update packages
       run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
 
-    - name: Compile
-      run: cd homework_1 && mkdir build && cd build && cmake ../CMakeLists.txt -DVER_REVISION=${{github.run_number}} && cmake --build . --config Release
+    - name: Make dir
+      run: mkdir homework_1\build
+
+    - name: Prepare to compile
+      run: cd homework_1\build && cmake ../CMakeLists.txt -DVER_REVISION=${{github.run_number}} && cmake --build . --config Release
 
     - name: Build package
       run: cmake --build . --target package
