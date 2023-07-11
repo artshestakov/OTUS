@@ -1,10 +1,15 @@
 ﻿#include <iostream>
-
-int main(int argc, char **argv)
+#include "IPReader.h"
+//-----------------------------------------------------------------------------
+int main(/*int argc, char **argv*/)
 {
-	for (int i = 0; i < argc; ++i)
+	IPReader reader("C:\\Shara\\ip_filter.csv");
+	if (!reader.Parse())
 	{
-		std::cout << argv[i] << std::endl;
+		std::cout << reader.GetErrorString() << std::endl;
+		return 1;
 	}
+
 	return 0;
 }
+//-----------------------------------------------------------------------------
