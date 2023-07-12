@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
+#include <stdexcept>
 //-----------------------------------------------------------------------------
 struct IPAddress
 {
@@ -92,7 +94,7 @@ inline unsigned char StrToInt(const std::string& s)
     {
         return (unsigned char)i;
     }
-    throw std::exception(("invalid range " + s + ". Must be from 0 to 255").c_str());
+    throw std::runtime_error(("invalid range " + s + ". Must be from 0 to 255").c_str());
 }
 //-----------------------------------------------------------------------------
 void Sort(std::vector<IPAddress>& AddressList, int octet)
@@ -170,3 +172,4 @@ void PrintAny46(std::vector<IPAddress>& AddressList)
     }
 }
 //-----------------------------------------------------------------------------
+

@@ -7,7 +7,7 @@ add_executable(homework_2
 )
 
 set_target_properties(
-    Example PROPERTIES
+    homework_2 PROPERTIES
     CXX_STANDARD 11
     CXX_STANDARD_REQUIRED ON
 )
